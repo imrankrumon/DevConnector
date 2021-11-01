@@ -1,0 +1,267 @@
+@use 'config' as *;
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Raleway', sans-serif;
+  font-size: 1rem;
+  line-height: 1.6;
+  background-color: #fff;
+  color: #333;
+
+  // animation: fadeInAnimation ease 3s;
+  // animation-iteration-count: 1;
+  // animation-fill-mode: forwards;
+}
+
+// @keyframes fadeInAnimation {
+//   0% {
+//     opacity: 0;
+//   }
+//   100% {
+//     opacity: 1;
+//   }
+// }
+
+a {
+  text-decoration: none;
+  color: $primary-color;
+  transition: all 0.2s ease-in;
+
+  &:hover {
+    color: lighten($primary-color, 10%);
+  }
+}
+
+ul {
+  list-style: none;
+}
+
+img {
+  width: 100%;
+}
+
+// Navbar
+.navbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0.7rem 2rem;
+  width: 100%;
+  position: fixed;
+  top: 0;
+  z-index: 1;
+  border-bottom: 1px solid $primary-color;
+  opacity: 0.9;
+
+  // Hamburger menu
+  .menu-btn {
+    width: 28px;
+    height: 20px;
+    position: relative;
+    cursor: pointer;
+    display: none;
+
+    &__burger {
+      position: absolute;
+      top: 0.5rem;
+      left: 0;
+      width: 28px;
+      height: 3px;
+      background: #fff;
+      transition: all 0.5s ease-in-out;
+
+      &::before {
+        content: '';
+        position: absolute;
+        top: -0.5rem;
+        left: 0;
+        width: 28px;
+        height: 3px;
+        background: #fff;
+        transition: all 0.5s ease-in-out;
+      }
+
+      &::after {
+        content: '';
+        position: absolute;
+        top: 0.5rem;
+        left: 0;
+        width: 20px;
+        height: 3px;
+        background: #fff;
+        transition: all 0.5s ease-in-out;
+      }
+
+      &.open {
+        transform: rotate(720deg);
+        background: transparent;
+
+        &::before {
+          transform: rotate(45deg) translate(5px, 8px);
+        }
+
+        &::after {
+          width: 28px;
+          transform: rotate(-45deg) translate(3px, -7px);
+        }
+      }
+    }
+  }
+
+  ul {
+    display: flex;
+  }
+
+  a {
+    padding: 0.45rem;
+    margin: 0 0.25rem;
+    color: #fff;
+
+    &:hover {
+      color: $primary-color;
+    }
+  }
+}
+
+// Landing
+.landing {
+  position: relative;
+  height: 100vh;
+  background: url('../img/showcase.jpg') no-repeat center center/cover;
+
+  &-inner {
+    height: 100%;
+    width: 80%;
+    margin: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    color: #fff;
+    text-align: center;
+  }
+}
+
+// Profiles Page
+.profile {
+  display: grid;
+  grid-template-columns: 2fr 4fr 2fr;
+  align-items: center;
+  gap: 2rem;
+  padding: 1rem;
+  line-height: 1.8;
+  margin-bottom: 1rem;
+}
+
+// Profile Page
+.profile-grid {
+  display: grid;
+  grid-template-areas:
+    'top top'
+    'about about'
+    'exp edu'
+    'github github';
+  gap: 1rem;
+
+  .profile-top {
+    grid-area: top;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+
+    img {
+      width: 250px;
+    }
+
+    .icons a {
+      color: #fff;
+      margin: 0 0.3rem;
+
+      &:hover {
+        color: $dark-color;
+      }
+    }
+  }
+
+  .profile-about {
+    grid-area: about;
+    text-align: center;
+
+    .skills {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+    }
+  }
+
+  .profile-exp {
+    grid-area: exp;
+  }
+
+  .profile-edu {
+    grid-area: edu;
+  }
+
+  .profile-exp,
+  .profile-edu {
+    & > div {
+      margin-bottom: 1rem;
+      padding-bottom: 1rem;
+      border-bottom: 1px dotted #ccc;
+
+      &:last-child {
+        border: none;
+      }
+    }
+
+    p {
+      margin: 0.5rem 0;
+    }
+  }
+
+  .profile-github {
+    grid-area: github;
+
+    .repo {
+      display: flex;
+
+      & > div:first-child {
+        flex: 7;
+        flex-basis: 70%;
+      }
+
+      & > div:last-child {
+        flex: 3;
+        flex-basis: 20%;
+      }
+    }
+  }
+}
+
+// Posts Page
+.post-form-header {
+  padding: 0.5rem;
+}
+
+.post {
+  display: grid;
+  grid-template-columns: 1fr 4fr;
+  gap: 2rem;
+  align-items: center;
+
+  & > div:first-child {
+    text-align: center;
+  }
+
+  img {
+    width: 150px;
+  }
+}

@@ -1,0 +1,133 @@
+@use 'config' as *;
+
+@media (max-width: 700px) {
+  //   .hide-sm {
+  //     display: none;
+  //   }
+
+  .container {
+    margin-top: 8rem;
+  }
+
+  //   Text Styles
+  .x-large {
+    font-size: 3rem;
+  }
+
+  .large {
+    font-size: 2rem;
+  }
+
+  .lead {
+    font-size: 1rem;
+  }
+
+  //   //   Navbar
+  //   .navbar {
+  //     display: block;
+  //     text-align: center;
+
+  //     ul {
+  //       text-align: center;
+  //       justify-content: center;
+  //     }
+
+  //     h1 {
+  //       margin-bottom: 1rem;
+  //     }
+  //   }
+
+  .navbar {
+    .menu-btn {
+      display: block;
+    }
+
+    ul {
+      visibility: hidden;
+      flex-direction: column;
+      align-items: flex-end;
+      position: fixed;
+      top: 3rem;
+      right: 0;
+      background: rgba($dark-color, 0.9);
+      width: 40vw;
+      height: 100vh;
+      padding: 2rem;
+      transform: translateX(100%);
+      transition: all 0.5s ease-in-out;
+
+      &.open {
+        visibility: visible;
+        transform: translateX(0);
+        transition: all 0.5s ease-in-out;
+
+        li {
+          transform: translateX(0);
+        }
+      }
+
+      li {
+        padding: 0.5rem 0;
+        margin: 0.5rem 0;
+        width: 100%;
+        border-bottom: 1px solid $primary-color;
+        transform: translateX(100vw);
+        transition: all 0.5s ease-in-out;
+      }
+    }
+  }
+
+  //   Profiles
+  .profile-grid {
+    grid-template-areas:
+      'top'
+      'about'
+      'exp'
+      'edu'
+      'github';
+  }
+
+  .profile-about {
+    .skills {
+      flex-direction: column;
+    }
+  }
+}
+
+@media (max-width: 580px) {
+  .hide-sm {
+    display: none;
+  }
+
+  .dash-buttons a {
+    display: block;
+    width: 100%;
+    margin: 0.2rem 0;
+  }
+
+  //   Profiles
+  .profile {
+    grid-template-columns: 1fr;
+    text-align: center;
+
+    img {
+      width: 200px;
+      margin: 0 auto;
+    }
+
+    ul {
+      display: none;
+    }
+  }
+
+  //   Posts
+  .post {
+    grid-template-columns: 1fr;
+    text-align: center;
+
+    a,
+    button {
+      padding: 0.3rem 0.4rem;
+    }
+  }
+}
