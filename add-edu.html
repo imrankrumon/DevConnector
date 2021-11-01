@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta2/css/all.min.css"
+        integrity="sha512-YWzhKL2whUzgiheMoBFwW8CKV4qpHQAEuvilg9FAn5VJUDwKZZxkJNuGM4XkWuk94WCrrwslk8yWNGmY1EduTA=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+    <script src="js/script.js" defer></script>
+    <title>Add Experiences - DevConnector</title>
+</head>
+
+<body>
+    <nav class="navbar bg-dark">
+        <h1>
+            <a href="dashboard.html">
+                <i class="fas fa-code"></i> DevConnector
+            </a>
+        </h1>
+
+
+        <div class="menu-btn">
+            <span class="menu-btn__burger"></span>
+        </div>
+
+        <ul>
+            <li><a href="profiles.html">Developers</a></li>
+            <li><a href="posts.html">Posts</a></li>
+            <li>
+                <a href="dashboard.html">
+                    <i class="fas fa-user"></i> Dashboard
+                </a>
+            </li>
+            <li>
+                <a href="login.html">
+                    <i class="fas fa-sign-out-alt"></i> Logout
+                </a>
+            </li>
+        </ul>
+    </nav>
+
+    <section class="container">
+        <h1 class="large text-primary">
+            Add Your Education
+        </h1>
+        <p class="lead"><i class="fas fa-graduation-cap"></i> Add any school, bootcamp, etc that you have attended</p>
+
+        <small>* = required fields</small>
+
+        <form action="dashboard.html" class="form">
+            <div class="form-group">
+                <input type="text" placeholder="* School or Bootcamp">
+            </div>
+            <div class="form-group">
+                <input type="text" placeholder="* Degree or Certificate">
+            </div>
+            <div class="form-group">
+                <input type="text" placeholder="Field Of Study">
+            </div>
+            <div class="form-group">
+                <h4>From Date</h4>
+                <input type="date">
+            </div>
+            <div class="form-group">
+                <h4>To Date</h4>
+                <input type="date">
+            </div>
+            <div class="form-group">
+                <input type="checkbox"> Current School
+            </div>
+            <div class="form-group">
+                <textarea placeholder="Program Description" cols="30" rows="5"></textarea>
+            </div>
+
+            <input type="submit" value="Submit" class="btn btn-primary my-1">
+            <a href="dashboard.html" class="btn my-1">Go Back</a>
+        </form>
+    </section>
+</body>
+
+</html>
