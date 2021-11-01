@@ -15,7 +15,7 @@
   "bugs": {
     "url": "https://github.com/imrankrumon/DevConnector/issues"
   },
-  "homepage": "https://github.com/imrankrumon/DevConnector#readme",
+  "homepage": "https://github.com/imrankrumon/DevConnector",
   "dependencies": {
     "gh-pages": "^3.2.3"
   }
